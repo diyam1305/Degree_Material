@@ -9,10 +9,10 @@ public class Calc
         Scanner sc = new Scanner(System.in);
         a = sc.nextInt();
         b = sc.nextInt();
-        System.out.print("Press 1 for Addition \n");
-        System.out.print("Press 2 for Subtraction \n");
-        System.out.print("Press 3 for Multiplication \n");
-        System.out.print("Press 4 for Division \n");
+        System.out.print("Press + for Addition \n");
+        System.out.print("Press - for Subtraction \n");
+        System.out.print("Press * for Multiplication \n");
+        System.out.print("Press / for Division \n");
         System.out.print("Enter your choice:");
         char choice = sc.next().charAt(0);
         switch(choice)
