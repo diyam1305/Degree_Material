@@ -1,0 +1,95 @@
+--Lab 3
+
+--1. Retrieve all data from table STUDENT.  
+Select * from STUDENT
+
+--2. Display Student Name and City from STUDENT.
+Select SNAME, CITY from STUDENT
+
+--3. Display student details of all students who belongs to COMPUTER branch.
+Select * from STUDENT where BRANCH = 'Computer'
+
+--4. Display names of students whose ID is less than 105 from STUDENT table.
+Select * from STUDENT where STDID < 105
+
+--5. Give Student Name, City and SPI of student whose SPI is greater than 6.50.
+Select SNAME, CITY, SPI from STUDENT where SPI > 6.50
+
+--6. Give name of Student whose branch is COMPUTER and SPI is greater than 8.00.  
+Select SNAME from STUDENT where BRANCH = 'Computer' AND SPI > 8.00
+
+--7. Give names of students whose ID is greater than 103 and belongs to Rajkot city.
+Select SNAME from STUDENT where STDID > 103 AND CITY = 'Rajkot'
+
+--8. Display names of students who belong to either ‘RAJKOT’ or ‘SURAT’ city (USE OR & IN).
+Select SNAME from STUDENT where CITY = 'Rajkot' OR CITY = 'Surat'
+Select SNAME from STUDENT where CITY IN ('Rajkot', 'Surat')
+
+--9. Display names of students with branch whose SPI is greater than 8.0 and ID is less than 105. 
+Select SNAME, BRANCH from STUDENT where SPI > 8.0 AND STDID < 105
+
+--10. Find all students whose SPI is greater than or equal to 7.0 and less than or equal to 9.0 (USE AND & BETWEEN).
+Select * from STUDENT where SPI >= 7.0 AND SPI <= 9.0
+Select * from STUDENT where SPI BETWEEN 7.0 AND 9.0
+
+--11. Find all students who do not belong to ‘COMPUTER’ branch.
+Select * from STUDENT where BRANCH != 'Computer'
+
+--12. Display Student ID, Name & SPI of students who belong to ‘COMPUTER’, ‘CIVIL’ or ‘CHEMICAL’ branch and ID is less than 104.
+Select STDID, SNAME, SPI from STUDENT where (BRANCH = 'Computer' OR BRANCH = 'Civil' OR BRANCH = 'Chemical') AND STDID < 104
+
+--13. Display all student IDs and names who do not belong to ‘COMPUTER’ or ‘CIVIL’ branch (USE NOT IN).
+Select STDID, SNAME from STUDENT where BRANCH NOT IN ('Computer', 'Civil')
+
+--14. Display all student names other than ‘DEEP’ from STUDENT table (USE NOT, <>, !=). 
+Select SNAME from STUDENT where SNAME != 'Deep'
+Select SNAME from STUDENT where SNAME <> 'Deep'
+Select SNAME from STUDENT where SNAME NOT IN ('Deep')
+
+--15. Display student names whose branch is not available (NULL) in STUDENT table. 
+Select SNAME from STUDENT where BRANCH IS NULL
+
+--16. Retrieve all unique branches name from STUDENT table.
+Select Distinct Branch from STUDENT 
+
+--17. Retrieve first 50% records from STUDENT table. 
+Select Top 50 percent * from STUDENT
+
+--18. Retrieve first five student IDs from STUDENT table. 
+Select Top 5 STDID from STUDENT
+
+
+---PART-B
+
+--19. Display all the details of first five students from STUDENT table. 
+Select Top 5 * from STUDENT
+
+--20. Display all the details of first three students whose SPI is greater than 8.0. 
+Select Top 3 * from STUDENT where SPI > 8.0
+
+--21. Display Student ID, Name of first five students whose branch does not belong to ‘COMPUTER’ branch. 
+Select Top 3 STDID, SNAME from STUDENT where BRANCH != 'Computer'
+
+--22. Select all details with student IDs not in the range 105 to 109. 
+Select * from STUDENT where STDID NOT BETWEEN 105 AND 109
+
+--23. Select all records from STUDENT where SPI is greater than 7.0 and less than or equal to 9.0, and student ID is between 102 and 108. 
+Select * from STUDENT where (SPI > 7.0 AND SPI <= 9.0) AND STDID BETWEEN 102 AND 108
+
+
+--PART-C
+
+--24. Display all details of students who have SPI more than 8.5 without using * from STUDENT table.
+Select STDID, SNAME, CITY, SPI, BRANCH from STUDENT
+
+--25. Retrieve names of students whose city is ‘RAJKOT’ and SPI is less than 8.00. 
+Select SNAME from STUDENT where CITY = 'Rajkot' AND SPI < 8.00
+
+--26. Retrieve records from STUDENT table where SPI is greater than 8.0 and student ID is less than 105.
+Select * from STUDENT where SPI > 8.0 AND STDID < 105
+
+--27. Retrieve records from STUDENT table where SPI is greater than 7.5 and student ID is between 100 and 110 and city is ‘RAJKOT’ or ‘SURAT’. 
+Select * from STUDENT where SPI > 7.5 AND (STDID BETWEEN 100 AND 110) AND (CITY = 'Surat' OR CITY = 'Rajkot')
+
+--28. Display details of students who belong to ‘CIVIL’ or ‘MECHANICAL’ branch and SPI is greater than 8.0.
+Select * from STUDENT where BRANCH = 'Civil' OR BRANCH = 'MEchanical' AND SPI > 8.0
